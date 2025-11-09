@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        // String url = "https://www.themealdb.com/api/json/v1/1/categories.php";
-        String url = "http://192.168.1.50:8080/coffee/listAll";
+
+        String url = "http://192.168.100.6:8080/coffee/listAll";
         JsonObjectRequest request = new JsonObjectRequest(url, this::function_onResponse, this::function_onError);
         queue.add(request);
     }
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             JSONArray array = response.getJSONArray("listCoffees");
             for (int i = 0; i < array.length(); i++) {
                 JSONObject elt = array.getJSONObject(i);
-                Toast.makeText(MainActivity.this, elt.toString(),Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this, elt.toString(),Toast.LENGTH_LONG).show();
                 Coffee p = new Coffee(elt.getInt("id"), elt.getString("name"), elt.getString("imageUrl"),elt.getString("instructions") );
                 listCoffee.add(p);
             }

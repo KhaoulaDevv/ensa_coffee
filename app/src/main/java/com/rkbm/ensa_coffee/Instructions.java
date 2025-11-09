@@ -22,14 +22,14 @@ public class Instructions extends AppCompatActivity {
        setContentView(R.layout.activity_instructions);
 
        imageView=findViewById(R.id.imageInst);
-       IDcoffee =findViewById(R.id.IdInst);
+       //IDcoffee =findViewById(R.id.IdInst);
        Name=findViewById(R.id.NameInstr);
        Inst=findViewById(R.id.Instr_Inst);
 
        Intent intent=getIntent();
        Bundle bundle=intent.getExtras();
        Coffee coffee =(Coffee)bundle.getSerializable("MEAL");
-       IDcoffee.setText(String.valueOf(coffee.getId()));
+       //IDcoffee.setText(String.valueOf(coffee.getId()));
        Name.setText(coffee.getName());
        Inst.setText(coffee.getInstructions());
        Glide.with(this).load(coffee.getImageURL()).into(imageView);

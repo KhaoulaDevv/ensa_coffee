@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/imageInst"
 
-        app:layout_constraintBottom_toTopOf="@+id/IdInst"
+
         android:layout_width="320dp"
         android:layout_height="180dp"
         android:layout_marginStart="10dp"
@@ -28,19 +28,7 @@
         />
 
 
-    <TextView
-        android:id="@+id/IdInst"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="10dp"
-        android:background="@color/black"
-        android:text="@string/textview"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/imageInst" />
+
 
     <TextView
         android:id="@+id/NameInstr"
@@ -54,7 +42,7 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="40sp"
-        app:layout_constraintTop_toBottomOf="@+id/IdInst" />
+        app:layout_constraintTop_toBottomOf="@+id/imageInst" />
 
     <TextView
         android:id="@+id/Instr_Inst"
