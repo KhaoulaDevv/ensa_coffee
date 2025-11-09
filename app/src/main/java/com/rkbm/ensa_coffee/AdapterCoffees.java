@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
@@ -43,6 +44,10 @@ public class AdapterCoffees extends RecyclerView.Adapter<AdapterCoffees.Holder> 
         holder.tId.setText(String.valueOf(p.getId()));
         holder.tName.setText(p.getName());
         Glide.with(context).load(p.getImageURL())
+                .apply(new RequestOptions()
+                        .centerCrop() // Crop to center and fill the `ImageView` bounds
+                        .override(320, 180)  // Resize the image to the desired dimensions (240dp x 135dp)
+                )
                 .placeholder(R.drawable.chargement)
                 .error(R.drawable.error)
                 .into(holder.image);
